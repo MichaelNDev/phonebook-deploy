@@ -1,0 +1,13 @@
+.notification {
+    background-color: lightgray;
+    border: 1px solid green;
+    color: green;
+    font-style: italic;
+}
+
+.errorNotification {
+    background-color: lightgray;
+    border: 1px solid red;
+    color: red;
+    font-style: italic;
+}
