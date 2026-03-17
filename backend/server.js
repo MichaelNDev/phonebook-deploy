@@ -37,6 +37,7 @@ const unknownEndpoint = (request, response) => {
     response.status(404).send({error: 'unknown endpoint'})
 }
 
+app.use(express.static('dist'))
 app.use(cors())
 app.use(express.json())
 // morgan.token creates a custom token of your liking
@@ -73,13 +74,13 @@ app.get('/info', (request, response) => {
 app.post('/api/persons', (request, response) => {
     const person = {
         name: request.body.name,
-        number: request.body.number,
+        phone: request.body.phone,
         id: generateId()
     }
     
-    if(!person.name || !person.number){
+    if(!person.name || !person.phone){
         return response.status(400).json({
-            error: 'name and number must be unique'
+            error: 'name and phone number must be unique'
         })
     }
     

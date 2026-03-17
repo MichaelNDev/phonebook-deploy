@@ -1,7 +1,15 @@
 import axios from 'axios'
-
+// url for db.json
 // const baseUrl = 'http://localhost:3001/persons'
-const baseUrl = 'http://localhost:3001/api/persons'
+
+// url for local port 3001
+// const baseUrl = 'http://localhost:3001/api/persons'
+
+// url for backend deployed on render
+// const baseUrl = 'https://phonebook-deploy-7jif.onrender.com/api/persons'
+
+
+const baseUrl = '/api/persons'
 
 const getAll = () => {
     const request = axios.get(baseUrl)
