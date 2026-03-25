@@ -69,6 +69,13 @@ const App = () => {
           }, 5000)
         }
         )
+        .catch(error => {
+          console.log(error.response.data.error)
+          setErrorMsg(error.response.data.error)
+          setTimeout(() => {
+            setErrorMsg(null)
+          }, 5000)
+        })
       } 
 
     } else {
@@ -77,8 +84,9 @@ const App = () => {
       // setNewName('')
       // setNewPhone('')
 
-      personsService.addPerson(person).then(returnedPersonObj => 
-        {
+      personsService
+        .addPerson(person)
+        .then(returnedPersonObj => {
           setPersons(prevPersons => prevPersons.concat(returnedPersonObj))
           setNewName('')
           setNewPhone('')
@@ -86,8 +94,14 @@ const App = () => {
           setTimeout(() => {
             setMessage(null)
           }, 5000)
-        }
-      )
+        })
+        .catch(error => {
+          console.log(error.response.data.error)
+          setErrorMsg(error.response.data.error)
+          setTimeout(() => {
+            setErrorMsg(null)
+          }, 5000)
+        })
     }
   }
 
