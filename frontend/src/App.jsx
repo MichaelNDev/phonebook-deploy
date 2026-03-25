@@ -8,6 +8,7 @@ import Notification from './components/Notification'
 
 
 const App = () => {
+
   const [persons, setPersons] = useState([])
 
   const [newName, setNewName] = useState('')
@@ -30,6 +31,7 @@ const App = () => {
     )
 
   }, [])
+
 
   const nameInput = (event) => {
     setNewName(event.target.value)

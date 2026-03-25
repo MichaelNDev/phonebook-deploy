@@ -1,4 +1,10 @@
 import axios from 'axios'
+
+// IMPORTANT: The point of axios being in a separate JS file is because
+// rather than changing axios configuration (ie. baseUrl) in 20 
+// diffent areas of our useEffect hook, 
+// we can just change a single line here in one place.
+
 // url for db.json
 // const baseUrl = 'http://localhost:3001/persons'
 
